@@ -18,7 +18,7 @@ $pivotButtonSpace: 3px;
   }
 
   > .side {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     position: absolute;
     width: $pivotButtonSize;
     height: $pivotButtonSize;

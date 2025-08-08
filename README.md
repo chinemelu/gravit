@@ -1,56 +1,112 @@
-## Introduction
+# Gravit Designer
 
-Gravit is a design tool for Mac, Windows, Linux, ChromeOS and the Browser made
-in the spirit for Freehand and Fireworks. It is completely written in HTML5,
-Javascript and CSS3. Gravit consists of the core engine called "Infinity", the
-actual Application and the core Module called "Gravit".
-
-We'd like to encourage everyone in getting involved with this project. You can
-develop new features or take a ticket and fix it. Or if you're a UX/Designer, you
-could help designing new icons or improving the UI. To get started contributing,
-read the [GitHub Guide](https://guides.github.com/activities/contributing-to-open-source/)
+Gravit, the versatile Design Tool - A powerful vector graphics editor built with modern web technologies.
 
 ## Prerequisites
 
-* NodeJS + NPM
-* Grunt Client
-* Bower
-* SASS + Compass
+- Node.js >= 14.0.0
+- npm >= 6.0.0
+- Bower (install globally with `npm install -g bower`)
 
-## Quick Start
+## Installation
 
-Install all prerequisites and make sure they're available on your path.
+1. **Install Node.js dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
 
-Then run `npm install` to install all nodejs dependencies
-Then run `bower install` to install all client javascript libraries
+2. **Install Bower dependencies:**
+   ```bash
+   bower install
+   ```
 
-Finally run `grunt`. You can then open Gravit in your
-webbrowser at http://127.0.0.1:8999/.
+## Running the Project
 
-We recommend using Chrome as this is the browser also used for the standalone
-version.
+### Development Mode
 
-## Quick Overview
+Start the development server:
+```bash
+npm start
+# or
+grunt serve
+```
 
-+ assets - contains all relevant assets like fonts, images, etc.
-+ shell - contains platform-specific code for standalone version
-+ src - contains all source code
-  + application - contains the application framework
-  + development - contains the development addon automatically loaded when developing
-  + gravit - contains the core module that is loaded by the application and provides all UI of Gravit
-  + infinity - contains the core rendering engine as well as core classes used everywhere else
-  + infinity-editor - contains editors, tools, guides and more based on infinity
-+ style - contains all styling files for the application
-+ test - contains all test files
+This will:
+- Start a local development server on `http://localhost:8999`
+- Watch for file changes and automatically reload
+- Compile SCSS to CSS
+- Open the application in your default browser
 
-## Community
+### Build for Production
 
-Issues are being tracked here on GitHub.
+Build the project for production:
+```bash
+npm run build
+# or
+grunt build
+```
+
+### Run Tests
+
+Run the test suite:
+```bash
+npm test
+# or
+grunt test
+```
+
+### Create Desktop Application
+
+Build the desktop application using NW.js:
+```bash
+npm run dist
+# or
+grunt dist
+```
+
+## Project Structure
+
+- `src/` - Main application source code
+- `assets/` - Static assets (images, fonts, icons)
+- `style/` - SCSS stylesheets
+- `shell/` - Platform-specific shells (Chrome, System)
+- `test/` - Test files
+
+## Available Grunt Tasks
+
+- `grunt serve` - Start development server
+- `grunt build` - Build for production
+- `grunt test` - Run tests
+- `grunt dist` - Build desktop application
+- `grunt clean` - Clean build directories
+
+## Dependencies
+
+### Runtime Dependencies
+- **NW.js** - Desktop application framework
+
+### Development Dependencies
+- **Grunt** - Build tool
+- **Grunt plugins** - Various build tasks (compass, uglify, concat, etc.)
+- **Bower** - Frontend package manager
+
+### Frontend Dependencies (via Bower)
+- **jQuery** - DOM manipulation
+- **Mousetrap** - Keyboard shortcuts
+- **Font Awesome** - Icons
+- **jqTree** - Tree component
+- **OpenType.js** - Font parsing
+- **Pako** - Compression
+- **Rangy** - Text selection
+- **Color Thief** - Color extraction
+- **URI.js** - URL manipulation
+- **Blob.js** - Blob polyfill
+- **Canvas-toBlob.js** - Canvas to Blob conversion
+
+## Browser Support
+
+The application supports modern browsers and can also run as a desktop application using NW.js.
 
 ## License
 
-`Gravit`'s code in this repo uses the GPL license, see our `LICENSE` file for detailed information.
-The name Gravit and the Gravit Logo as well as all related logos are exclusive trademarks of
-Quasado GmbH, Quasado e.K. and may not be used without prior written permission.
-
-`Gravit`'s code is also available as a commercial license. For more information, contact us.
+This project is licensed under the terms specified in the LICENSE file.

@@ -5,7 +5,7 @@ button, .g-button, input, textArea, select, .g-input {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px 3px;
   vertical-align: middle;

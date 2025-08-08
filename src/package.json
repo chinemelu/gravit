@@ -1,6 +1,8 @@
 {
     "name": "Gravit",
-    "main": "http://127.0.0.1:8999/",
+    "description": "Gravit, the versatile Design Tool",
+    "version": "0.0.3.1",
+    "main": "index.html",
     "window": {
         "toolbar": true,
         "resizable": true,
@@ -8,7 +10,15 @@
         "frame": true,
         "width": 1024,
         "height": 786,
-        "show": false
+        "show": false,
+        "min_width": 800,
+        "min_height": 600
     },
-    "node-remote": "*"
+    "node-remote": "*",
+    "dependencies": {
+        "nw": "^0.83.0"
+    },
+    "devDependencies": {
+        "nw-builder": "^3.8.2"
+    }
 }

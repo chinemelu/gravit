@@ -1,7 +1,7 @@
 @import '../variables';
 
 #toolbar {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   position: absolute;
   width: 61px; // + border size
   background: $frameColor;

@@ -124,7 +124,7 @@
     border: 1px solid $frameBorderColor;
 
     > div {
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       display: inline-block;
       height: 100%;
     }
@@ -215,7 +215,7 @@
             padding-left: 0px;
             padding-right: 0px;
             border: none;
-            @include box-sizing(border-box);
+            box-sizing: border-box;
           }
 
           > div:last-child {
@@ -256,7 +256,7 @@
       border: 1px solid $frameBorderColor;
 
       > div {
-        @include box-sizing(border-box);
+        box-sizing: border-box;
         display: inline-block;
         height: 100%;
         width: 12.5%;

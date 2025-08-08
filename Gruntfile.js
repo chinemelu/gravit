@@ -76,28 +76,24 @@ module.exports = function (grunt) {
                 }
             }
         },
-        compass: {
+        sass: {
             options: {
-                sassDir: 'style',
-                cssDir: '<%= cfg.tmp %>',
-                generatedImagesDir: '<%= cfg.tmp %>/image/generated',
-                imagesDir: 'assets/image/images',
-                javascriptsDir: 'src',
-                fontsDir: '<%= cfg.tmp %>/font',
-                httpImagesPath: '/image',
-                httpGeneratedImagesPath: '/image/generated',
-                httpFontsPath: '/font',
-                relativeAssets: false
+                implementation: require('sass'),
+                sourceMap: true,
+                includePaths: ['assets/bower_components']
             },
             dev: {
-                options: {
-                    debugInfo: true
+                files: {
+                    '<%= cfg.tmp %>/gravit.css': 'style/gravit.scss'
                 }
             },
             build: {
                 options: {
-                    debugInfo: false,
-                    generatedImagesDir: '<%= cfg.build %>/source/image/generated'
+                    outputStyle: 'compressed',
+                    includePaths: ['assets/bower_components']
+                },
+                files: {
+                    '<%= cfg.build %>/source/gravit.css': 'style/gravit.scss'
                 }
             }
         },
@@ -426,7 +422,7 @@ module.exports = function (grunt) {
     grunt.registerTask('dev', function (target) {
         grunt.task.run([
             'clean:dev',
-            'compass:dev',
+            'sass:dev',
             'copy:dev',
             'connect:livereload',
             'watch'
@@ -436,7 +432,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', function (target) {
         grunt.task.run([
             'clean:dev',
-            'compass:dev',
+            'sass:dev',
             'copy:dev',
             'connect:test',
             'mocha'
@@ -447,7 +443,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:build',
             'useminPrepare',
-            'compass:build',
+            'sass:build',
             'concat',
             'cssmin',
             'uglify',
@@ -455,7 +451,6 @@ module.exports = function (grunt) {
             'copy:preBuild',
             'copy:build',
             'replace:build',
-            'nodewebkit',
             'copy:postBuild'
         ]);
     });
